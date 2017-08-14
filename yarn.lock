@@ -581,6 +581,10 @@ bluebird@^3.3.0, bluebird@^3.4.7:
   version "3.5.0"
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.0.tgz#791420d7f551eea2897453a8a77653f96606d67c"
 
+blueimp-md5@^2.8.0:
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/blueimp-md5/-/blueimp-md5-2.8.0.tgz#7011a7703d1ac26c9d2e60b12a843fea09c8bb18"
+
 bn.js@^4.0.0, bn.js@^4.1.0, bn.js@^4.1.1, bn.js@^4.4.0:
   version "4.11.8"
   resolved "https://registry.yarnpkg.com/bn.js/-/bn.js-4.11.8.tgz#2cde09eb5ee341f484746bb0309b3253b1b1442f"

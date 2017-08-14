@@ -3,6 +3,8 @@
   <div *ngFor="let hero of heroes" (click)="gotoDetail(hero)" class="col-1-4">
     <div class="module hero">
       <h4>{{hero.name}}</h4>
+
+      <my-hero-gravatar [hero]="hero"></my-hero-gravatar>
     </div>
   </div>
 </div>
