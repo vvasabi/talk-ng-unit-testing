@@ -3,6 +3,7 @@ import {HeroGravatarComponent} from 'app/hero-gravatar.component';
 
 describe('Configure testing module', () => {
   beforeEach(async(() => {
+    // The module metadata has a similar syntax as what goes inside the @NgModule decorator
     TestBed.configureTestingModule({
       declarations: [
         HeroGravatarComponent
@@ -10,7 +11,7 @@ describe('Configure testing module', () => {
     }).compileComponents();
   }));
 
-  it('can start a real Angular environment for testing', () => {
+  it('can create HeroGravatarComponent', () => {
     expect(TestBed.createComponent(HeroGravatarComponent)).toBeTruthy();
   });
 });
