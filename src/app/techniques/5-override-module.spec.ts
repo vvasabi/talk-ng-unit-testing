@@ -47,7 +47,7 @@ describe('Override module', () => {
     hero.name = 'Testy McTestface';
     const fixture = TestBed.createComponent(HeroListComponent);
     fixture.componentInstance.heroes = [hero];
-    fixture.detectChanges(); // here, we make sure our changes get rendered
+    fixture.detectChanges(); // here, we make sure our changes get rendered (more on this later)
     expect(fixture.nativeElement.innerText).toBe('3 - Testy McTestface');
   });
 });
