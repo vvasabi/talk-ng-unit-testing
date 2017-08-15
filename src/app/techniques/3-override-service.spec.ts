@@ -1,10 +1,10 @@
 import {async, fakeAsync, TestBed, tick} from '@angular/core/testing';
 
-import {AppModule} from 'app/app.module';
-import {SHARED_TEST_MODULE} from './1-configure-testing-module-for-real.spec';
+import {SHARED_TEST_MODULE} from './0-configure-testing-module.spec';
 import {HeroService} from 'app/hero.service';
 import {Hero} from 'app/hero';
 import {inject} from '@angular/core/testing';
+import {Http} from '@angular/http';
 
 // We define a "mock" service that returns hard coded values.
 // This technique prevents our test from making a real web request.
@@ -22,25 +22,15 @@ class MockHeroService extends HeroService {
 
 describe('Mock service', () => {
   beforeEach(async(() => {
-    // We reuse the SHARED_TEST_MODULE created back in 1-configure-testing-module-for-real.spec.ts
+    // We reuse the SHARED_TEST_MODULE created back in 01-configure-testing-module-for-real.spec.ts
     // that we said we were going to reuse.
     TestBed.configureTestingModule(SHARED_TEST_MODULE);
 
-    // We call TestBed.overrideModule to make sure our MockHeroService is used instead
-    TestBed.overrideModule(AppModule, {
-      remove: {
-        providers: [
-          HeroService
-        ]
-      },
-      add: {
-        providers: [
-          {
-            provide: HeroService,
-            useClass: MockHeroService
-          }
-        ]
-      }
+    // We call TestBed.overrideProvider to make sure our MockHeroService is used instead of the
+    // regular HeroService provided by AppModule
+    TestBed.overrideProvider(HeroService, {
+      useFactory: http => new MockHeroService(http),
+      deps: [Http]
     });
 
     TestBed.compileComponents();

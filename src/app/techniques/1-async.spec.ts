@@ -12,7 +12,7 @@ export class AsyncService {
 }
 
 describe('Jasmine async support', () => {
-  // The done function allows you to manually tell Jasmine that your test is done.
+  // The done function allows us to manually tell Jasmine that our test is done.
   it('provides the done callback', done => {
     const service = new AsyncService();
     service.doAsyncWork().then(() => {
@@ -24,7 +24,7 @@ describe('Jasmine async support', () => {
 
 describe('Angular async test support', () => {
   // The async function automatically checks to see if all async executions end and
-  // calls the done function for you.
+  // calls the done function for us.
   it('provides the async function', async(() => {
     const service = new AsyncService();
     service.doAsyncWork().then(() => {

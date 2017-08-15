@@ -1,5 +1,5 @@
 import {async, fakeAsync, inject, TestBed, tick} from '@angular/core/testing';
-import {AsyncService} from './2-async.spec';
+import {AsyncService} from './1-async.spec';
 
 describe('Dependency injection in tests', () => {
   beforeEach(async(() => {
@@ -19,14 +19,14 @@ describe('Dependency injection in tests', () => {
       expect(asyncService).toBeTruthy();
     }));
 
-  // You can also call TestBed.get() directly to get whatever you want. The 2 methods are only different in the
+  // We can also call TestBed.get() directly to get whatever we want. The 2 methods are only different in the
   // syntax. There are no benefits or trade-offs.
   it('can also get AsyncService using TestBed.get()', () => {
     const asyncService = <AsyncService>TestBed.get(AsyncService);
     expect(asyncService).toBeTruthy();
   });
 
-  // You can call async alongside inject.
+  // We can call async alongside inject.
   // Note that async needs to be called before inject. The order matters.
   it('can chain async with inject',
     async(inject([AsyncService], (asyncService: AsyncService) => {
@@ -35,7 +35,7 @@ describe('Dependency injection in tests', () => {
       });
     })));
 
-  // Likewise, you can call fakeAsync alongside inject.
+  // Likewise, we can call fakeAsync alongside inject.
   it('can chain fakeAsync with inject',
     fakeAsync(inject([AsyncService], (asyncService: AsyncService) => {
       asyncService.doAsyncWork();
