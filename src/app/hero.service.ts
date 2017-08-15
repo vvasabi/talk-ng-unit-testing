@@ -11,14 +11,13 @@ export class HeroService {
 
   constructor(private http: Http) { }
 
-  getHeroes(): Promise<Array<Hero>> {
-    return this.http
-      .get(this.heroesUrl)
-      .toPromise()
-      .then((response) => {
-        return response.json().data as Hero[];
-      })
-      .catch(this.handleError);
+  async getHeroes(): Promise<Hero[]> {
+    try {
+      const response = await this.http.get(this.heroesUrl).toPromise();
+      return response.json().data as Hero[];
+    } catch (error) {
+      return this.handleError(error);
+    }
   }
 
   getHero(id: number): Promise<Hero> {

@@ -6,7 +6,7 @@ import {HeroGravatarComponent} from 'app/hero-gravatar.component';
 // In the real world, components have dependencies. It is usually better to import the module where the component to
 // be tested belongs to, since its module likely declares or imports the dependencies.
 // Reuse this test module by exporting it from a file and import in many spec files.
-const SHARED_TEST_MODULE: TestModuleMetadata = {
+export const SHARED_TEST_MODULE: TestModuleMetadata = {
   imports: [
     AppModule
   ],
