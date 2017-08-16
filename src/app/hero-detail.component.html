@@ -7,12 +7,12 @@
     <label>id: </label>{{hero.id}}</div>
   <div>
     <label>name: </label>
-    <input [(ngModel)]="hero.name" placeholder="name" />
+    <input [(ngModel)]="hero.name" name="name" placeholder="name" />
   </div>
   <div>
     <label>email: </label>
-    <input [(ngModel)]="hero.email" placeholder="email" />
+    <input [(ngModel)]="hero.email" name="email" placeholder="email" />
   </div>
-  <button (click)="goBack()">Back</button>
-  <button (click)="save()">Save</button>
+  <button (click)="goBack()" name="backButton">Back</button>
+  <button (click)="save()" name="saveButton">Save</button>
 </div>
