@@ -52,10 +52,9 @@ describe('Override component metadata', () => {
         },
         template: 'fake list'
       }
-    });
-    TestBed.compileComponents().then(() => {
+    }).compileComponents().then(() => {
       const fixture = TestBed.createComponent(HeroListComponent);
-      expect(fixture.nativeElement.innerText).toBe('fake list');
+      expect(fixture.nativeElement.textContent).toBe('fake list');
       expect(fixture.nativeElement.className).toBe('hero-list');
     });
   }));
@@ -65,7 +64,7 @@ describe('Override component metadata', () => {
     TestBed.overrideTemplate(HeroListComponent, 'new template');
     TestBed.compileComponents().then(() => {
       const fixture = TestBed.createComponent(HeroListComponent);
-      expect(fixture.nativeElement.innerText).toBe('new template');
+      expect(fixture.nativeElement.textContent).toBe('new template');
     });
   }));
 
@@ -75,7 +74,7 @@ describe('Override component metadata', () => {
     TestBed.compileComponents().then(() => {
       TestBed.overrideTemplate(HeroListComponent, 'new template');
       const fixture = TestBed.createComponent(HeroListComponent);
-      expect(fixture.nativeElement.innerText).not.toBe('new template');
+      expect(fixture.nativeElement.textContent).not.toBe('new template');
     });
   }));
 });

@@ -48,6 +48,6 @@ describe('Override module', () => {
     const fixture = TestBed.createComponent(HeroListComponent);
     fixture.componentInstance.heroes = [hero];
     fixture.detectChanges(); // here, we make sure our changes get rendered (more on this later)
-    expect(fixture.nativeElement.innerText).toBe('3 - Testy McTestface');
+    expect(fixture.nativeElement.textContent).toBe('3 - Testy McTestface');
   });
 });
