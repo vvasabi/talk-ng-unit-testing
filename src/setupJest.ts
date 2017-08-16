@@ -1,6 +1,8 @@
 import 'jest-preset-angular';
+require('core-js/es7/object');
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
+import 'rxjs/add/observable/of';
 
 const mock = () => {
   let storage = {};
