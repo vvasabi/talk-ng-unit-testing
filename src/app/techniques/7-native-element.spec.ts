@@ -1,24 +1,8 @@
 import {Component, Input} from '@angular/core';
-import {Hero} from 'app/hero';
 import {async, TestBed} from '@angular/core/testing';
 
-const createHeroes = () => {
-  const hero1 = new Hero();
-  hero1.id = 1;
-  hero1.name = 'Hero 1';
-  hero1.active = true;
-
-  const hero2 = new Hero();
-  hero2.id = 2;
-  hero2.name = 'Hero 2';
-  hero2.active = true;
-
-  const hero3 = new Hero();
-  hero3.id = 3;
-  hero3.name = 'Hero 3';
-  hero3.active = false;
-  return [hero1, hero2, hero3];
-};
+import {Hero} from 'app/hero';
+import {createHeroes} from 'testing-support/testing-utils';
 
 @Component({
   selector: 'my-hero-info',

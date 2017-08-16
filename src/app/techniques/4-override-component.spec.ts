@@ -14,7 +14,10 @@ export class HeroNameComponent {
 
 @Component({
   selector: 'my-hero-list',
-  template: '<ul><li *ngFor="let hero of heroes"><my-hero-name [hero]="hero"></my-hero-name></li></ul>'
+  template: `
+    <ul>
+      <li *ngFor="let hero of heroes"><my-hero-name [hero]="hero"></my-hero-name></li>
+    </ul>`
 })
 export class HeroListComponent {
   @Input() heroes: Hero[] = [];
