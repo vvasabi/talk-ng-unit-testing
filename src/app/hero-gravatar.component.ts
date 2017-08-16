@@ -16,7 +16,7 @@ export class HeroGravatarComponent implements DoCheck {
   gravatarImageUrl = '';
 
   ngDoCheck(): void {
-    if (this.hero) {
+    if (this.hero && this.hero.email) {
       this.gravatarImageUrl = getGravatarUrl(this.hero.email);
     }
   }

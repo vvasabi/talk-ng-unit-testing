@@ -1,8 +1,7 @@
 import {Component} from '@angular/core';
 import {TestBed, async} from '@angular/core/testing';
 import {HeroListComponent, HeroListModule, HeroNameComponent} from './4-override-component.spec';
-import {Hero} from 'app/hero';
-import {createHeroes} from '../../testing-support/testing-utils';
+import {createHeroes} from 'testing-support/testing-utils';
 
 @Component({
   selector: 'my-hero-name',
