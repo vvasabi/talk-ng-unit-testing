@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {TestBed, async, fakeAsync, tick} from '@angular/core/testing';
+import {TestBed, async} from '@angular/core/testing';
 import {Hero} from 'app/hero';
 
 @Component({
@@ -32,7 +32,7 @@ describe('Detect changes', () => {
     expect(htmlElement.textContent).toBe('active');
 
     hero.active = false;
-    fixture.detectChanges();
+    fixture.detectChanges(); // After changing state, we need to detect changes
     expect(htmlElement.textContent).toBe('retired');
   });
 });

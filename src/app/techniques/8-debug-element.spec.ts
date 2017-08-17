@@ -47,7 +47,7 @@ describe('Debug Element', () => {
     }).compileComponents();
   }));
 
-  it('exposes native HTMLElement object to tests', () => {
+  it('has a similar CSS element match API as nativeElement', () => {
     const fixture = TestBed.createComponent(HeroListComponent);
     fixture.componentInstance.heroes = createHeroes();
     fixture.detectChanges();
@@ -56,7 +56,7 @@ describe('Debug Element', () => {
     expect(fixture.debugElement.queryAll(By.css('.retired')).length).toBe(1);
   });
 
-  it('allows child components to be accessed', () => {
+  it('allows child component instances to be accessed', () => {
     const fixture = TestBed.createComponent(HeroListComponent),
       heroes = createHeroes();
     fixture.componentInstance.heroes = heroes;

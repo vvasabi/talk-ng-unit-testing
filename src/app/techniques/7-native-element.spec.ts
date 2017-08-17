@@ -44,6 +44,8 @@ describe('Native Element', () => {
     const fixture = TestBed.createComponent(HeroListComponent);
     fixture.componentInstance.heroes = createHeroes();
     fixture.detectChanges();
+
+    // We select child element using CSS selector syntax.
     expect(fixture.nativeElement.querySelectorAll('li').length).toBe(3);
     expect(fixture.nativeElement.querySelectorAll('.active').length).toBe(2);
     expect(fixture.nativeElement.querySelectorAll('.retired').length).toBe(1);
@@ -53,6 +55,8 @@ describe('Native Element', () => {
     const fixture = TestBed.createComponent(HeroListComponent);
     fixture.componentInstance.heroes = createHeroes();
     fixture.detectChanges();
+
+    // We can even fake click using nativeElement.
     fixture.nativeElement.querySelectorAll('button')[0].click();
     fixture.detectChanges();
     expect(fixture.nativeElement.querySelectorAll('li').length).toBe(2);
